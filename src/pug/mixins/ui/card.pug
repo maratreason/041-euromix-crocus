@@ -1,0 +1,15 @@
+mixin card(stock, title, price, imageSrc)
+  .card
+    a.card__img-wrapper(href="#")
+      img.card__img(src=imageSrc alt=title)
+    .card__content
+      p.card__stock= stock
+      h3.card__title= title
+      p.card__price= price
+        span &nbsp;руб
+    .card__footer
+      a.card__footer-cart(href="#")
+        img.card__footer-icon(src="images/icons/cart-orange.svg" alt="")
+        span.card__footer-text В корзину
+      a.card__btn.big-card__btn(href="#")
+        img.card__btn-icon(src="images/icons/arrow-right.svg" alt="")

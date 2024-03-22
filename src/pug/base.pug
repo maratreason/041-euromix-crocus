@@ -1,0 +1,173 @@
+include mixins.pug
+
+doctype html
+html
+	head
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500&display=swap")
+		link(href="css/swiper.min.css" rel="stylesheet")
+		link(href="css/main.min.css" rel="stylesheet")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="icon" href="favicon.ico" type="image/svg+xml")
+		title Euromix - Бетонные заводы
+
+	body(id="top")
+		block content
+
+		.modal(data-modal)
+			.modal-inner
+				img.modal__close(src="images/icons/ui/modal-close-icon.svg" alt="close icon" data-modal-close)
+				h2.modal__title Рассчитать стоимость
+				.modal__block
+					form.form.modal__form(action="/" enctype="multipart/form-data")
+						.form-2-col.d-flex
+							.form-row
+								.form-group
+									label.form-control(for="") Что желаете построить? *
+									.select.form-control(data-select)
+										.select__current
+											span Дом
+											.btn-dropdown__icon
+												img(src="images/icons/ui/select-icon.svg"
+													alt="select dropdown item"
+													data-select-icon)
+										ul.select__list
+											li.select__item Дом
+											li.select__item Дача
+
+								.form-group
+									label.form-control(for="") Размер объекта*
+									.form-inline
+										input.input.input-sm.form-control(type="number" value="4" min="4")
+										span X
+										input.input.input-sm.form-control(type="number" value="8" min="8")
+										span м
+
+								.form-group
+									label.form-control(for="") Название или код товара
+									input.input.form-control(type="text" placeholder="Введите название или код товара")
+
+								.form-group
+									label.form-control(for="") Фундамент *
+									.select.form-control(data-select)
+										.select__current
+											span Уже есть
+											.btn-dropdown__icon
+												img(src="images/icons/ui/select-icon.svg"
+													alt="select dropdown item"
+													data-select-icon)
+										ul.select__list
+											li.select__item Уже есть
+											li.select__item Сделать фундамент
+
+								.form-group
+									label.form-control(for="") Утепление стен *
+									.select.form-control(data-select)
+										.select__current
+											span Без утепления
+											.btn-dropdown__icon
+												img(src="images/icons/ui/select-icon.svg"
+													alt="select dropdown item"
+													data-select-icon)
+										ul.select__list
+											li.select__item Без утепления
+											li.select__item Стандартный утеплитель
+											li.select__item Утеплитель из Германии
+
+								.form-group
+									label.form-control(for="") Этажность *
+									.select.form-control(data-select)
+										.select__current
+											span 1 этаж
+											.btn-dropdown__icon
+												img(src="images/icons/ui/select-icon.svg"
+													alt="select dropdown item"
+													data-select-icon)
+										ul.select__list
+											li.select__item Цокольный этаж
+											li.select__item 1 этаж
+											li.select__item 2 этаж
+
+							.form-row
+								.form-group
+									label.form-control(for="") Адрес строительства *
+									input.input.form-control(type="text" placeholder="Введите адрес строительства")
+
+								.form-group
+									label.form-control(for="") Если у Вас есть проект/чертеж, загрузите его
+									input.input.form-control(type="file" data-input-file data-buttonText="Your label.")
+
+								.form-group
+									label.form-control(for="") Имя*
+									input.input.form-control(type="text" placeholder="Ваше имя")
+
+								.form-group
+									label.form-control(for="") Телефон*
+									input.input.form-control(type="text" placeholder="+7 (900) 000-00-00")
+
+								.form-group
+									label.form-control(for="") Электронная почта
+									input.input.form-control(type="email" placeholder="Email")
+
+								.form-group
+									label.form-control(for="") Оставить комментарий
+									input.input.form-control(type="text" placeholder="Введите комментарий")
+
+						button.modal__submit.btn.btn-big.btn-primary(type="submit") Отправить
+
+		.backdrop
+
+		.mobile-menu(data-mobile-menu)
+			ul.navigation-mobile__list
+				li.navigation__item
+					a.navigation__link(href="#") Каталог автомобилей
+					img.navigation__icon(src="images/icons/Arrow.svg" alt="")
+				li.navigation__item
+					a.navigation__link(href="#") Новые авто
+				li.navigation__item
+					a.navigation__link(href="#") Авто с пробегом
+				li.navigation__item
+					a.navigation__link(href="#") Варианты покупки
+					img.navigation__icon(src="images/icons/Arrow.svg" alt="")
+				li.navigation__item
+					a.navigation__link(href="#") Дубликаты госномеров
+				li.navigation__item
+					a.navigation__link(href="#") Истории выкупа
+				li.navigation__item
+					a.navigation__link(href="#") О компании
+					img.navigation__icon(src="images/icons/Arrow.svg" alt="")
+				li.navigation__item
+					a.navigation__link(href="#") Контакты
+				li.navigation__line
+				li.navigation__item
+					a.navigation__link(href="#")
+						img(src="images/icons/user.svg" alt="")
+						| Личный кабинет
+				li.navigation__item
+					.header-info__wrapper
+						.header-info__block
+							img.header-info__icon(src="images/icons/map.svg" alt="")
+							.header-info__content
+								.header-info__text Ставрополь ул. Доваторцев, 21
+								a.header-info__trigger.link(href="#") Выбрать город
+				li.navigation__item
+					.header-info__wrapper
+						.header-info__block
+							img.header-info__icon(src="images/icons/phone.svg" alt="")
+							.header-info__content
+								.header-info__text.header-info__phone 8 (962) 495-55-54
+								a.header-info__trigger.link(href="#") Заказать звонок
+
+		//- .loader
+		//- 	.loader__top
+		//- 	img.loader__logo(src="images/icons/logo.png" alt="")
+		//- 	.loader__bottom
+
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js")
+		//- script(src="js/scrollTrigger.js")
+		//- script(src="js/gsap.min.js")
+		//- script(src="js/animations.js")
+		script(src="js/swiper.js")
+		script(src="js/main.js")

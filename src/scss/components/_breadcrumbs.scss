@@ -1,0 +1,37 @@
+.breadcrumbs {
+  padding: 5rem 0 3rem;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    color: #989898;
+
+    &:not(:last-child) {
+      margin-right: 2.5rem;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: -1.5rem;
+        width: 0.5rem;
+        height: 0.7rem;
+        color: var(--grey);
+        opacity: 0.5;
+        content: "-";
+      }
+    }
+
+    &:last-child {
+      .breadcrumbs__link {
+        color: var(--grey);
+      }
+    }
+  }
+
+  &__link {
+    color: var(--grey);
+  }
+}

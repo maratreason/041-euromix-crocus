@@ -1,0 +1,25 @@
+@mixin title {
+  font-family: Ubuntu, sans-serif;
+}
+
+@mixin text {
+  font-size: 1.6rem;
+  font-family: Ubuntu, sans-serif;
+  line-height: 2.4rem;
+}
+
+@mixin text-bold {
+  font-weight: var(--fw-700);
+  font-family: Ubuntu-bold, sans-serif;
+}
+
+@mixin text-medium {
+  font-weight: var(--fw-500);
+  font-family: Ubuntu-medium, sans-serif;
+}
+
+@mixin text-italic {
+  font-size: 1.6rem;
+  font-family: Ubuntu-italic, sans-serif;
+  line-height: 2.4rem;
+}

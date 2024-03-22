@@ -1,0 +1,8 @@
+mixin big-card(title, text, imageSrc)
+  .big-card
+    img.big-card__img(src=imageSrc alt=title)
+    .big-card__content
+      h3.big-card__title= title
+      p.big-card__text= text
+    a.big-card__btn(href="#")
+      img.big-card__btn-icon(src="images/icons/arrow-right.svg" alt="")

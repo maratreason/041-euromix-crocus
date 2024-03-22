@@ -1,0 +1,144 @@
+.select {
+  position: relative;
+  display: block;
+  width: 100%;
+  color: var(--black);
+  border: none;
+
+  &-sm {
+    width: 10rem;
+    padding: 1.2rem 1rem !important;
+  }
+
+  &-md {
+    width: 29.5rem;
+    padding: 2rem;
+  }
+
+  &::placeholder {
+    color: var(--black);
+    font-size: 1.5rem;
+  }
+
+  &.select-bordered {
+    border: 1px solid var(--horizontal-card-border);
+    border-radius: var(--radius-10);
+  }
+
+  .select__current {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Gilroy-500', sans-serif;
+
+    .btn-dropdown__icon {
+      margin-left: 1rem;
+      font-size: 1rem;
+      transform: rotate(0deg);
+
+      span {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        color: var(--grey);
+        transform: translateY(-50%);
+      }
+
+      img {
+        transition: var(--transition-2);
+      }
+    }
+  }
+
+  .select__list {
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    z-index: 5;
+    display: none;
+    width: 100%;
+    max-height: 24rem;
+    padding-bottom: 0;
+    overflow: auto;
+    color: var(--black);
+    line-height: 1.6rem;
+    background: var(--white);
+    border: 1px solid var(--horizontal-card-border);
+    border-radius: var(--radius-10);
+
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+    
+    &::-webkit-scrollbar-track {
+      margin: 0.2rem 0;
+      background: var(--card-border);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      height: 3rem;
+      background-color: var(--orange);
+      border-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .select__list-scrolled {
+    height: 15rem;
+    padding: 0 0.3rem 0 0;
+    overflow-y: auto;
+    background: transparent;
+
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--card-border);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      height: 3rem; 
+      background-color: var(--blue);
+      border-radius: 0.3rem;
+      outline: 0.2rem solid var(--blue);
+    }
+  }
+
+  .select__item {
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(#32902d, 0.1);
+    }
+
+    &--active {
+      font-weight: var(--fw-700);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+.select-link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &__icon {
+    position: relative;
+    top: 0.2rem;
+    width: 0.9rem;
+    height: 0.4rem;
+  }
+}

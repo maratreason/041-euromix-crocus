@@ -1,0 +1,70 @@
+html {
+  /* 10px / 16(по умолчанию) = 0.625 -> 62.5% */
+  font-size: 62.5%;
+}
+
+body {
+  @include text;
+
+  position: relative;
+  overflow-x: hidden;
+  color: var(--black);
+  background: var(--white);
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--card-border);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    height: 3rem; 
+    background-color: var(--orange);
+    border-radius: 0.3rem;
+    outline: 0.2rem solid var(--orange);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}
+
+.container {
+  position: relative;
+  width: 118.4rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section-empty {
+  margin-top: 14rem;
+}
+
+span {
+  display: inline;
+}
+
+a {
+  color: var(--black);
+}
+
+sup {
+  font-size: 1.2rem;
+}
+
+.link {
+  font-family: 'Gilroy-500', sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.title {
+  @include title;
+
+  font-weight: var(--fw-700);
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}

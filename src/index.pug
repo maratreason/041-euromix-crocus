@@ -1,0 +1,205 @@
+extends pug/base.pug
+
+append content
+  include pug/includes/header.pug
+
+  main.main(id="main")
+    section.section-hero
+      img.section-hero__image(src="images/main/main-bg.jpg" alt="")
+      .section-hero__block
+        .container
+          .section-hero__title Мобильный бетонный завод
+            span.orange EUROMIX CROCUS
+
+          form.section-hero__form.form
+            .form__title Оставьте заявку
+            .form__subtitle Мы отправим Вам цены, условия и сроки поставки
+            .form__inputs
+              input.input(type="text" placeholder="Ваше имя")
+              input.input(type="text" placeholder="Телефон")
+            .form__btn
+              button.btn.btn-wide.btn-black(type="submit") Отправить
+
+            .form__checkbox.checkbox
+              input.checkbox__input(type="checkbox" id="checkbox-1" checked)
+              label.checkbox__label(for="checkbox-1") согласен с пользовательским<br> соглашением
+
+            .form__info
+              .form__info-item
+                svg.form__info-icon(width="42" height="42" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M8.03 22.176h3.722v1.28H8.03v-1.28zm13.407-1.168c.353 0 .684.08.983.227a22.199 22.199 0 013.872-3.713c.353.336.706.672 1.063 1.008a21.377 21.377 0 01-3.717 4.276 2.242 2.242 0 11-4.04-.827 38.339 38.339 0 01-4.23-7.224l1.125-.618c1.66 2.23 3.108 4.549 4.301 6.972a2 2 0 01.643-.1zM18.228 8.786l-.004 3.83L28.799 6.54 18.245.42l-.009 3.928a18.67 18.67 0 00-10.47 5.28A18.68 18.68 0 002.28 22.86c0 4.982 1.961 9.715 5.485 13.235A18.648 18.648 0 0021 41.58c4.981 0 9.715-1.962 13.238-5.485a18.732 18.732 0 004.583-7.489l.218-.676-4.192-1.243-.21.638A14.33 14.33 0 0131.147 33a14.287 14.287 0 01-10.143 4.2A14.295 14.295 0 0110.865 33c-2.7-2.7-4.2-6.325-4.2-10.143 0-3.818 1.504-7.442 4.2-10.139a14.308 14.308 0 017.363-3.93zM35.183 20.71a14.051 14.051 0 00-.68-2.692l-.231-.643 4.1-1.528.239.655c.457 1.264.772 2.574.949 3.91l.1.752-4.384.16-.093-.614zm-.08 4.78c.16-.865.24-1.747.24-2.625 0-.088 0-.172-.004-.26l-.009-.681 4.373-.16.016.702a19.017 19.017 0 01-.37 4.141l-.15.74-4.205-1.248.11-.61zm-1.36-9.215a14.421 14.421 0 00-1.344-2.117l-.416-.542 3.444-2.696.424.554a18.356 18.356 0 011.945 3.13l.336.684-4.112 1.537-.277-.55zm-2.163-3.116l-.441-.437a14.39 14.39 0 00-2.083-1.726l-.618-.42 2.734-3.44.534.374c.899.63 1.747 1.34 2.524 2.116.092.093.18.185.269.278l.529.554-3.448 2.7zM21.008 35.59v-3.717h1.281v3.717h-1.28zm9.396-3.713l-2.63-2.63.908-.907 2.629 2.63-.907.907zm-18.665-.307l2.633-2.629.908.907-2.63 2.63-.911-.908zm.307-18.665l2.629 2.634-.903.907-2.634-2.63.908-.91zm18.664.307l-.907-.907-2.629 2.633.907.908 2.63-2.634zm3.713 9.4h-3.721v-1.281h3.721v1.28z" fill="#222A31")
+                .form__info-text Ответим в течение часа
+              .form__info-item
+                svg.form__info-icon(width="49" height="49" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g(fill="#222A31")
+                    path(d="M28.077 22.858zm1.921.275c-.167.01-.333.01-.49 0 .083.005.162.015.25.015.073.004.157-.01.24-.015zm-1.206-.083zm1.417.073z")
+                    path(d="M40.023 29.552l.02-.02-.76-.764-.485-.48-.833-.833-.431-.431-4.155-4.156c-.49.343-1.181.701-2.195.98a5.36 5.36 0 01-1.431.192c-1.926 0-3.371-1.01-3.396-1.03l-4.003-2.567-.681.681c.112.956.343 3.224.147 4.787-.304 2.436-2.573 3.151-2.67 3.18l-.765.23-.314-.734c-.015-.035-1.436-3.357-2.376-5.949-1.132-3.121 1.01-5.125 1.073-5.18l2.915-2.915-2.033-2.033-9.634 9.643 3.538 3.538s.392.5.569 1.117c.073.26.103.52.112.74a2.7 2.7 0 011.906.794c.637.637.873 1.524.73 2.371l.084.084a2.71 2.71 0 011.607-.54c.725 0 1.406.285 1.92.794.662.657.902 1.593.73 2.46a2.725 2.725 0 011.75-.637c.725 0 1.407.284 1.921.794.995 1 1.058 2.621.142 3.7-.015.014-.024.029-.04.044a.803.803 0 01-.102.122l-.27.27c.192-.04.383-.069.579-.069.725 0 1.406.284 1.92.799.794.794.99 1.99.569 2.989l.196.196c.015.02.02.044.04.059.014.02.038.024.058.039l.005.005a.826.826 0 001.083-.015l.005.005.034-.034 1.406-1.407.054-.054-.01-.01a.816.816 0 000-1.058l.02-.02-.764-.759-.427-.426.926-.926c.172.171.304.298.294.289l1.24 1.24c.015.019.02.039.04.058.019.02.038.025.058.04l.005.004a.826.826 0 001.083-.014l.005.005.034-.035 1.406-1.406.054-.054-.01-.01a.828.828 0 000-1.058l.02-.02-1.348-1.347-.289-.285.912-.91c.632.626 1.396 1.386 1.42 1.405l.564.564c.015.02.02.04.04.059.014.014.039.024.058.039l.005.005a.826.826 0 001.083-.015l.005.005.034-.034 1.407-1.407.053-.053-.01-.01a.816.816 0 000-1.059l.02-.02-1.347-1.347-.735-.73.94-.94 1.319 1.317c.034.035.073.06.108.089l.563.563c.015.02.02.044.04.059.014.02.038.024.058.04l.005.004a.826.826 0 001.083-.015l.005.005.034-.034 1.406-1.406.054-.054-.01-.01c.265-.333.265-.77.01-1.083zm-8.207 4.047l.005-.005.73.73.005.006-.74-.73z")
+                    path(d="M27.602 22.672c.112.05.23.093.357.142a4.186 4.186 0 01-.357-.142zm-.765-.406s.025.02.069.044c-.034-.025-.069-.044-.069-.044zm.123.074a3.86 3.86 0 010-.001zm.26.151zm11.099-14.94a3 3 0 00-4.244.001l-1.458 1.46a3 3 0 00.001 4.241l8.068 8.068a3 3 0 004.242.001l1.459-1.458a3 3 0 000-4.243l-8.069-8.07zm5.853 12.012a1.298 1.298 0 11-1.837-1.837 1.298 1.298 0 011.837 1.837zM2.612 15.18a3 3 0 000 4.244l1.049 1.049a3 3 0 004.242 0l7.636-7.636a3 3 0 00.001-4.242l-1.047-1.048a3 3 0 00-4.243-.001L2.612 15.18zm4.12 3.979c-.529.53-1.381.53-1.906 0a1.343 1.343 0 010-1.906 1.343 1.343 0 011.907 0c.529.53.529 1.382 0 1.906zm6.87 12.309a1.837 1.837 0 00-.093-2.494 1.836 1.836 0 00-2.489-.093l-.005.005c-.034.029-.073.053-.108.088l-.48.485c-.034.034-.059.073-.088.108l-.564.563c-.02.015-.039.02-.058.04-.015.019-.025.043-.04.058l-.004.005a.826.826 0 00.014 1.083l-.005.005.035.034 1.406 1.406.054.054.01-.01a.828.828 0 001.058 0l.02.02.764-.764.48-.48.103-.103-.01-.01zm10.971 10.187a1.83 1.83 0 00-.093-2.49 1.837 1.837 0 00-2.494-.092s-.078.063-.112.093l-.873.872c-.034.034-.058.073-.088.108l-.563.563c-.02.015-.04.02-.06.04-.019.014-.024.039-.038.058l-.005.005a.826.826 0 00.015 1.083l-.005.005.034.034 1.406 1.407.054.053.01-.01a.828.828 0 001.058 0l.02.02.764-.764.48-.48.495-.495-.005-.01zm-6.629-7.477a1.83 1.83 0 00-.093-2.49 1.837 1.837 0 00-2.494-.093l-1.26 1.26-.005.005c-.034.029 1.186-1.206 1.152-1.172l-.48.48c-.035.03-.06.074-.088.108L12.857 34.1c-.02.015-.04.02-.06.04-.014.014-.024.039-.038.058l-.005.005a.826.826 0 00.014 1.083l-.005.005.035.034 1.406 1.407.054.053.01-.01a.828.828 0 001.058 0l.02.02 2.019-2.019.48-.48-1.157 1.157 1.255-1.274zm4.4 2.616a1.837 1.837 0 00-.093-2.494 1.836 1.836 0 00-2.49-.093l-2.15 2.151-.005.005c-.035.03 2.077-2.097 2.043-2.063l-.48.485c-.035.03-2.21 2.22-2.24 2.259l-.563.559c-.02.014-.04.02-.059.039-.014.02-.024.039-.039.059l-.005.005a.826.826 0 00.015 1.082l-.005.005.034.035 1.407 1.406.053.054.01-.01a.828.828 0 001.059 0l.02.02 2.91-2.911.48-.485-2.038 2.053 2.136-2.16z")
+                    path(d="M21.923 13.573L17.4 18.096s-1.808 1.65-.867 4.248c.945 2.597 2.361 5.9 2.361 5.9s1.809-.55 2.044-2.44c.235-1.887-.201-4.999-.201-4.999l1.494-1.494 4.606 2.954s1.887 1.338 4.111.726c2.22-.608 2.656-1.593 2.656-1.593l4.288 4.288 2.714-2.715-10.148-10.148-1.68 1.68-6.855-.93z")
+                .form__info-text индивидуальные условия доставки и оплаты
+      .section-hero__content
+        .container
+          .section-hero__content-inner
+            .section-hero__content-year.year
+              .year__number 30
+              .year__content
+                .year__title лет
+                .year__text успешной работы
+
+            .section-hero__content-text.
+              «Завод EUROMIX» - производитель бетонных заводов EUROMIX CROCUS - это предприятие,
+              которое за годы партнерства плотного сотрудничества с западными коллегами выработало
+              уникальную стратегию, максимально приблизившись к оптимуму «цена-качество»,
+              имеющее большой опыт в производстве строительного и технологического оборудования
+
+    section.main-catalog
+      .container
+        .main-catalog__inner
+          .main-catalog__title.title Каталог
+          .main-catalog__tabs.catalog-tabs
+            .catalog-tabs__header
+              button.catalog-tabs__btn.is--active
+                .catalog-tabs__btn-text Бетонные заводы
+              button.catalog-tabs__btn
+                .catalog-tabs__btn-text Продукция
+              button.catalog-tabs__btn
+                .catalog-tabs__btn-text Комлектующие
+            .catalog-tabs__content
+              +big-card(
+                "Мобильный бетонный завод Euromix Crocus",
+                "Мобильный бетонный завод EUROMIX CROCUS 10.500, производительность до 10 м³/ч, весовая система дозирования цемента и инертных заполнителей",
+                "images/main/catalog-1.jpg"
+              )
+              +big-card(
+                "БЕТОННЫЕ ЗАВОДЫ СЕРИИ EUROMIX CROCUS COMPACT",
+                "Мобильный бетонный завод EUROMIX CROCUS 10.500, производительность до 10 м³/ч, весовая система дозирования цемента и инертных заполнителей",
+                "images/main/catalog-2.jpg"
+              )
+              +big-card(
+                "БЕТОННЫЕ ЗАВОДЫ СЕРИИ EUROMIX CROCUS COMPACT",
+                "Мобильный бетонный завод EUROMIX CROCUS 10.500, производительность до 10 м³/ч, весовая система дозирования цемента и инертных заполнителей",
+                "images/main/catalog-3.jpg"
+              )
+              +big-card(
+                "БЕТОННЫЕ ЗАВОДЫ СЕРИИ EUROMIX CROCUS COMPACT",
+                "Мобильный бетонный завод EUROMIX CROCUS 10.500, производительность до 10 м³/ч, весовая система дозирования цемента и инертных заполнителей",
+                "images/main/catalog-4.jpg"
+              )
+              +big-card(
+                "БЕТОННЫЕ ЗАВОДЫ СЕРИИ EUROMIX CROCUS COMPACT",
+                "Мобильный бетонный завод EUROMIX CROCUS 10.500, производительность до 10 м³/ч, весовая система дозирования цемента и инертных заполнителей",
+                "images/main/catalog-5.jpg"
+              )
+              .catalog-tabs__content-more
+                a.catalog-tabs__content-link(href="#") перейти в каталог
+                  img.catalog-tabs__content-icon(src="images/icons/arrow-right-orange.svg" alt="")
+
+    section.section-advantages.section-black
+      .container
+        .section-advantages__inner
+          ul.section-advantages__list
+            li.section-advantages__item
+              .section-advantages__block
+                img.section-advantages__icon(src="images/icons/adv_1.svg" alt="")
+              .section-advantages__block
+                h3.section-advantages__text Сертификаты
+                  br
+                  | качества
+            li.section-advantages__item
+              .section-advantages__block
+                img.section-advantages__icon(src="images/icons/adv_2.svg" alt="")
+              .section-advantages__block
+                h3.section-advantages__text Продукция в наличии на складе
+            li.section-advantages__item
+              .section-advantages__block
+                img.section-advantages__icon(src="images/icons/adv_3.svg" alt="")
+              .section-advantages__block
+                h3.section-advantages__text Развернутая комплектация с ценами
+            li.section-advantages__item
+              .section-advantages__block
+                img.section-advantages__icon(src="images/icons/adv_4.svg" alt="")
+              .section-advantages__block
+                h3.section-advantages__text Мобильная
+                  br
+                  | бригада пуско-наладки оборудования
+            li.section-advantages__item
+              .section-advantages__block
+                img.section-advantages__icon(src="images/icons/adv_5.svg" alt="")
+              .section-advantages__block
+                h3.section-advantages__text Свой автопарк везем застрахованные грузы
+    
+    section.section-partners
+      .container
+        .section-partners__inner
+          h2.section-partners__title.title наши партнеры
+          .section-partners__slider.swiper-slider
+            .swiper-wrapper
+              .section-partners__slide.swiper-slide
+                .section-partners__slide-left
+                  img.section-partners__slide-icon(src="images/icons/article.svg" alt="")
+                  p.section-partners__slide-text.
+                    Мы работаем с лучшими партнерами В ассортименте нашего завода шесть типов бетонных заводов,
+                    начиная от супермобильных бетонных заводов EUROMIX CROCUS серии 750,
+                    бетонных заводов серии 30/800.4 COMPACT.
+                .section-partners__slide-right
+                  .section-partners__slide-block
+                    img.section-partners__slide-img(src="images/icons/companies/1.png" alt="")
+                    img.section-partners__slide-img(src="images/icons/companies/2.png" alt="")
+                    img.section-partners__slide-img(src="images/icons/companies/3.png" alt="")
+                    img.section-partners__slide-img(src="images/icons/companies/4.png" alt="")
+                    img.section-partners__slide-img(src="images/icons/companies/5.png" alt="")
+                    img.section-partners__slide-img(src="images/icons/companies/6.png" alt="")
+                    img.section-partners__slide-img(src="images/icons/companies/7.png" alt="")
+                    img.section-partners__slide-img(src="images/icons/companies/8.png" alt="")
+            .section-partners__pagination
+              button.section-partners__dot.is--active
+              button.section-partners__dot
+              button.section-partners__dot
+
+    section.section-popular
+      .container
+        .section-popular__inner
+          h2.section-popular__title.title популярные товары
+          .section-popular__content
+            +card(
+              "В наличии",
+              "Мобильный бетонный завод Euromix Crocus",
+              "1 212 000",
+              "images/main/card-1.jpg"
+            )
+            +card(
+              "В наличии",
+              "Мобильный бетонный завод Euromix Crocus",
+              "1 212 000",
+              "images/main/card-1.jpg"
+            )
+            +card(
+              "В наличии",
+              "Мобильный бетонный завод Euromix Crocus",
+              "1 212 000",
+              "images/main/card-1.jpg"
+            )
+            +card(
+              "В наличии",
+              "Мобильный бетонный завод Euromix Crocus",
+              "1 212 000",
+              "images/main/card-1.jpg"
+            )
+
+    section.section-choose.section-black
+      .container
+        .section-choose__inner
+          .section-choose__content
+            .section-choose__block
+              p.section-choose__phone
+              .section-choose__icons
+                a.section-choose__link(href="#")
+                  img.section-choose__icon(src="" alt="")
+            .section-choose__block
+              h2.section-choose__title надежное  партнерство
+              p.section-choose__subtitle Производители выбирают нас
+            .section-choose__block
+          .section-choose__image
+
+
+  include pug/includes/footer.pug
