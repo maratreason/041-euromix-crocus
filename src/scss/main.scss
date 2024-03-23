@@ -503,14 +503,134 @@
 // Section Partners
 .section-choose {
   width: 100%;
-  height: 40rem;
-  padding: 6.5rem 0;
+  height: 47rem;
+  padding: 5rem 0;
+  overflow: hidden;
+  color: var(--white);
   background-image: url("../images/icons/footer-bg.svg");
   background-repeat: no-repeat;
   background-size: 100%;
 
   &__inner {
+    display: flex;
+  }
 
+  &__titleblock {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-width: 90rem;
+    height: 16rem;
+    margin-bottom: 4rem;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 4.6rem;
+      height: 100%;
+      border: 3px solid var(--white);
+      content: "";
+    }
+
+    &::before {
+      left: 0;
+      border-right: none;
+    }
+
+    &::after {
+      right: 0;
+      border-left: none;
+    }
+  }
+
+  &__title {
+    @include text-bold;
+
+    margin-bottom: -3rem;
+    color: var(--orange-2);
+    font-size: 6rem;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    @include text-medium;
+
+    font-size: 4rem;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  &__socialblock {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    min-width: 90rem;
+  }
+
+  &__phone {
+    @include text-bold;
+
+    font-size: 3.6rem;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  &__infoblock {
+    display: flex;
+  }
+
+  &__list {
+    width: 52.4rem;
+    padding-left: 3.6rem;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    &::before {
+      position: absolute;
+      top: 0.4rem;
+      left: -3.6rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-image: url("../images/icons/list-check-icon.svg");
+      content: "";
+    }
+  }
+
+  &__askme {
+    @include text-bold;
+
+    margin-bottom: 1.5rem;
+    color: var(--orange-2);
+    font-size: 2.4rem;
+  }
+
+  &__author {
+    @include text-medium;
+
+    font-size: 2.4rem;
+  }
+
+  &__prof {
+    @include text-medium;
+
+    margin-bottom: 1.4rem;
+  }
+
+  &__image {
+    position: relative;
+    left: -22rem;
   }
 }
 

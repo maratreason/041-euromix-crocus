@@ -190,16 +190,28 @@ append content
       .container
         .section-choose__inner
           .section-choose__content
-            .section-choose__block
-              p.section-choose__phone
+            .section-choose__socialblock
+              p.section-choose__phone 8-800-350-2008
               .section-choose__icons
                 a.section-choose__link(href="#")
-                  img.section-choose__icon(src="" alt="")
-            .section-choose__block
+                  img.section-choose__icon(src="images/icons/whatsapp.svg" alt="")
+                a.section-choose__link(href="#")
+                  img.section-choose__icon(src="images/icons/telegram.svg" alt="")
+            .section-choose__titleblock
               h2.section-choose__title надежное  партнерство
               p.section-choose__subtitle Производители выбирают нас
-            .section-choose__block
-          .section-choose__image
-
+            .section-choose__infoblock
+              ul.section-choose__list
+                li.section-choose__item Качественное оборудование (комплектующие)
+                li.section-choose__item Широкий ассортимент
+                li.section-choose__item Доступный ценовой диапазон
+                li.section-choose__item Прямые поставки
+              .section-choose__authorblock
+                p.section-choose__askme Спросите и я Вам отвечу
+                p.section-choose__author Евгений Самсонов
+                p.section-choose__prof Менедженр Проектов
+                button.btn.btn-primary задать вопрос
+          img.section-choose__image(src="images/main/partners-user.png" alt="")
+            
 
   include pug/includes/footer.pug

@@ -1,4 +1,6 @@
 .btn {
+  @include text-bold;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6,14 +8,13 @@
   height: 6rem;
   padding: 1.9rem 0;
   color: var(--black);
-  font-size: 1.3rem;
-  font-family: 'Gilroy-600', sans-serif;
+  font-size: 1.6rem;
   line-height: 1;
   text-align: center;
   text-transform: uppercase;
   background: none;
   border: 1px solid var(--black); 
-  border-radius: 0.8rem;
+  border-radius: 3rem;
   transform: translateY(0);
   cursor: pointer;
   transition: var(--transition-1);
