@@ -85,7 +85,12 @@
   }
 
   &.btn-sm {
+    @include text-medium;
+
+    width: 13.5rem;
+    height: 4.8rem;
     padding: 1.5rem;
+    font-size: 1.4rem;
     letter-spacing: 0;
   }
 

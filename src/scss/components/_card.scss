@@ -128,4 +128,17 @@
   }
 }
 
-.small-card {}
+.small-card {
+  &__img-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  &__title {
+    @include text-medium;
+
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+  }
+}

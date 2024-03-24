@@ -1,0 +1,8 @@
+mixin small-card(text, imageSrc)
+  .small-card
+    a.small-card__img-wrapper(href="#")
+      img.card__img(src=imageSrc alt=text)
+      .card__btn.big-card__btn
+        img.card__btn-icon(src="images/icons/arrow-right.svg" alt="")
+    .small-card__content
+      h3.small-card__title= text
