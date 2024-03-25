@@ -1,0 +1,12 @@
+mixin job-card(text, date, year, imageSrc)
+  .job-card
+    a.job-card__img-wrapper(href="#")
+      img.card__img(src=imageSrc alt=text)
+      .card__btn.big-card__btn
+        img.card__btn-icon(src="images/icons/arrow-right.svg" alt="")
+    .job-card__content
+      .job-card__date-wrapper
+        .job-card__date
+          .job-card__day= date
+          .job-card__year= year
+      h3.job-card__title= text

@@ -18,7 +18,7 @@ append content
               input.input(type="text" placeholder="Ваше имя")
               input.input(type="text" placeholder="Телефон")
             .form__btn
-              button.btn.btn-wide.btn-black(type="submit") Отправить
+              button.btn.btn-sm.btn-black(type="submit") Отправить
 
             .form__checkbox.checkbox
               input.checkbox__input(type="checkbox" id="checkbox-1" checked)
@@ -270,6 +270,41 @@ append content
                   +small-card("В Москву отправлен бетоносмеситель EUROMIX 600.200.", "images/main/services-1.jpg")
 
             .services-tabs__footer
+              button.btn.btn-sm.btn-primary все проекты
+
+    section.section-job.section-black
+      .container
+        .section-job__inner
+          h2.section-job__title.title Выполненные проекты
+          .services-tabs__article-wrapper
+            .services-tabs__article
+              img.services-tabs__article-icon(src="images/icons/article.svg" alt="")
+              p.services-tabs__article-text.section-job__text.
+                «ЗАВОД EUROMIX» производитель бетонных заводов EUROMIX CROCUS - это предприятие,
+                имеющее большой опыт в производстве строительного и технологического оборудования.
+                Наш завод производит и поставляет супермобильные, мобильные, стационарные бетонные заводы
+                EUROMIX CROCUS, бетоносмесители серии EUROMIX, растворо- бетонные узлы (РБУ) бетоносмесительные
+                установки (БСУ), а также отдельные комплектующие бетонных заводов, системы рециклинга бетона,
+                тепловые центры для бетонных заводов зимнего исполнения.
+                Предприятие осуществляет продажу бетонных заводов EUROMIX CROCUS с доставкой по России,
+                СНГ и странам дальнего зарубежья
+
+          ul.section-job__list
+            li.section-job__item
+              +job-card(
+                "В город Хабаровск произведена отгрузка бетоносмесителя EUROMIX 600.300М.",
+                "23 ноя",
+                2022,
+                "images/main/completed-works-1.jpg"
+              )
+            li.section-job__item
+              +job-card(
+                "В город Хабаровск произведена отгрузка бетоносмесителя EUROMIX 600.300М.",
+                "23 ноя",
+                2022,
+                "images/main/completed-works-1.jpg"
+              )
+          .section-job__btn
               button.btn.btn-sm.btn-primary все проекты
 
 

@@ -142,3 +142,50 @@
     letter-spacing: -0.5px;
   }
 }
+
+.job-card {
+  overflow: hidden;
+
+  &__img {
+    &-wrapper {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 2rem;
+    color: var(--white);
+  }
+
+  &__date-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    margin-left: 1rem;
+    color: var(--white);
+    background: var(--orange-2);
+    border-radius: var(--radius-3);
+    transform: skew(20deg);
+  }
+
+  &__date {
+    @include text-medium;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: skew(-20deg);
+  }
+
+  &__day {
+    line-height: 1;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+  }
+}
