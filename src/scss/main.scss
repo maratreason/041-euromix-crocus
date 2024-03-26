@@ -784,4 +784,53 @@
   }
 }
 
+// Section About
+.section-about {
+  padding: 6.5rem 0 5rem;
+
+  &__inner {
+    
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+  &__subtitle {
+    @include text-bold;
+
+    width: 57rem;
+    margin-bottom: 6rem;
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  &__text {
+    color: var(--black-3);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 3rem 0 6rem;
+  }
+
+  &__item {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+
+    &-text {
+      line-height: 1;
+      text-transform: capitalize;
+    }
+  }
+}
+
 @import "media";
