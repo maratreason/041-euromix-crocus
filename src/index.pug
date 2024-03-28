@@ -352,6 +352,37 @@ append content
                 button.btn.btn-sm.btn-primary Подробнее
             .section-about__block
               img.section-about__youtube(src="images/main/youtube.jpg" alt="")
-            
+
+    section.section-reviews
+      .container
+        .section-reviews__inner
+          h2.section-reviews__title.title Отзывы наших клиентов
+          .section-partners__slider.swiper-slider
+            .swiper-wrapper
+              .section-partners__slide.swiper-slide
+                .section-partners__slide-left
+                  img.section-partners__slide-icon(src="images/icons/article.svg" alt="")
+                  p.section-partners__slide-text.
+                    Благодарные отзывы наших клиентов
+                    - лучшее подтверждение высокого
+                    качества наших работ
+                .section-reviews__slide-right
+                  .section-reviews__slide-block
+                    .section-reviews__img.is--active
+                      img.section-reviews__picture(src="images/main/sertificat.jpg" alt="")
+                      span.section-reviews__img-hover
+                        svg(width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          circle(cx="28.9043" cy="28.827" r="27.4297" stroke="white" stroke-width="2")
+                          line(x1="29.9043" y1="20.2119" x2="29.9043" y2="38.3036" stroke="white" stroke-width="2")
+                          line(y1="-1" x2="18.0917" y2="-1" transform="matrix(-1 -8.74228e-08 -8.74228e-08 1 38.3809 29.6885)" stroke="white" stroke-width="2")
+
+                    .section-reviews__img
+                      img.section-reviews__img(src="images/main/sertificat.jpg" alt="")
+                    .section-reviews__img
+                      img.section-reviews__img(src="images/main/sertificat.jpg" alt="")
+            .section-partners__pagination
+              button.section-partners__dot.is--active
+              button.section-partners__dot
+              button.section-partners__dot
 
   include pug/includes/footer.pug

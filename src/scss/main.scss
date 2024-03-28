@@ -833,4 +833,56 @@
   }
 }
 
+// Section Reviews
+.section-reviews {
+  padding: 6.5rem 0 5rem;
+  background: var(--light-grey-bg);
+  background-image: url("../images/icons/main-advantages.svg");
+  background-repeat: no-repeat;
+  background-position: 0 200%;
+  background-size: 100%;
+
+  &__inner {
+
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-3);
+    cursor: pointer;
+
+    &.is--active {
+      .section-reviews__img-hover {
+        display: flex;
+      }
+    }
+  } 
+
+  &__img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(#FF6B00, 0.9);
+    content: "";
+
+    svg {
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+  }
+
+  &__slide-block {
+    display: flex;
+    gap: 4rem;
+  }
+}
+
 @import "media";
