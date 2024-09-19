@@ -1,25 +1,32 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const dropdown = document.querySelectorAll("[data-dropdown]");
+  /**
+   * Tabs
+   */
+  const tabContainers = document.querySelectorAll("[data-tabs]");
+  if (tabContainers) {
+    tabContainers.forEach(tabContainer => {
+      const tabButtons = tabContainer.querySelectorAll("[data-tab-button]");
+      const tabContents = tabContainer.querySelectorAll("[data-tab-content]");
 
-  if (dropdown) {
-    dropdown.forEach((el) => {
-      const dropdownList = el.querySelector("[data-dropdown-list]");
-      el.addEventListener("mouseenter", (e) => {
-        e.stopPropagation();
-        if (!dropdownList.classList.contains("is--active")) {
-          dropdownList.classList.add("is--active");
+      tabContainer.addEventListener("click", (e) => {
+        console.log(e.target.closest("[data-tab-button]"))
+        const attribute = e.target.closest("[data-tab-button]").getAttribute("data-tab-button");
+
+        tabContents.forEach(content => content.classList.remove("is--active"));
+        tabButtons.forEach(btn => btn.classList.remove("is--active"));
+
+        if (attribute) {
+          document.querySelector(`[data-tab-button="${attribute}"]`).classList.add("is--active");
+          document.querySelector(`[data-tab-content="${attribute}"]`).classList.add("is--active");
         }
-
-        ["mouseleave", "click"].forEach((eventName) => {
-          dropdownList.addEventListener(eventName, () => {
-            dropdownList.classList.remove("is--active");
-          });
-        });
       });
     });
   }
 
-  // Counter script
+
+  /**
+   * Counter
+   */
   const counters = document.querySelectorAll("[data-counter]");
   if (counters) {
     counters.forEach((cnt) => {
@@ -61,112 +68,129 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // const mobile = () => {
-  //   const trigger = document.querySelector("[data-mobile-trigger]");
-  //   const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const burger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
 
-  //   trigger.addEventListener("click", function() {
-  //     this.classList.toggle("is--active");
-  //     mobileMenu.classList.toggle("is--active");
+  if (burger) {
+    burger.addEventListener("click", function(e) {
+      e.preventDefault();
 
-  //     if (this.classList.contains("is--active")) {
-  //       this.style.left = "2rem";
-  //     } else {
-  //       this.style.left = "0";
-  //     }
+      this.classList.toggle("closed");
+      mobileMenu.classList.toggle("is--active");
 
-  //   });
-  // }
-
-  // mobile();
-
-  // Slider
-  const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
-    let swiper;
-
-    breakpoint = window.matchMedia(breakpoint);
-
-    const enableSwiper = function (className, settings) {
-      swiper = new Swiper(className, settings);
-
-      if (callback) {
-        callback(swiper);
-      }
-    };
-
-    const checker = function () {
-      if (breakpoint.matches) {
-        return enableSwiper(swiperClass, swiperSettings);
+      if (this.classList.contains("is--active")) {
+        this.style.left = "2rem";
       } else {
-        if (swiper !== undefined) swiper.destroy(true, true);
-        return;
+        this.style.left = "0";
       }
-    };
 
-    breakpoint.addEventListener("change", checker);
-    checker();
-  };
-
-  const someFunc = (instance) => {
-    if (instance) {
-      instance.on("slideChange", function (e) {
-        console.log("*** mySwiper.activeIndex", instance.activeIndex);
+      mobileMenu.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (e.target.classList.contains("navigation__link")) {
+          burger.classList.toggle("closed");
+          mobileMenu.classList.remove("is--active");
+        } else {
+          return false;
+        }
       });
-    }
-  };
+    });
+  }
 
-  resizableSwiper("(max-width: 768px)", "[data-section-cards-slider]", {
+  /**
+   * Slider
+   */
+  const swiper = new Swiper('[data-slider-partners]', {
     loop: true,
     slidesPerView: 1,
+    containerModifierClass: "swiper-wrapper",
     pagination: {
-      el: "[data-section-cards-dots]",
-      clickable: true,
+      el: ".section-partners__pagination",
+      type: "bullets",
+      bulletClass: "section-partners__dot",
+      bulletActiveClass: "section-partners__dot--active",
+      clickable: true
     },
-    someFunc,
   });
 
-  resizableSwiper("(max-width: 768px)", "[data-section-cards-slider-2]", {
+  const swiper2 = new Swiper('[data-slider-partners-2]', {
     loop: true,
     slidesPerView: 1,
+    containerModifierClass: "swiper-wrapper",
     pagination: {
-      el: "[data-section-cards-dots-2]",
-      clickable: true,
+      el: ".section-partners__pagination",
+      type: "bullets",
+      bulletClass: "section-partners__dot",
+      bulletActiveClass: "section-partners__dot--active",
+      clickable: true
     },
-    someFunc,
   });
+
+  tabs("[data-producttabs]", "[data-producttabs-content]");
+
+  accordion("[data-accordeon]", "[data-accordeon-list]");
+
+  productSlider("[data-product-slider]");
+  
 });
 
-// Select input script
+/**
+ * Dropdown menu
+ */
+const dropdown = document.querySelectorAll("[data-dropdown]");
+
+if (dropdown) {
+  dropdown.forEach((select) => {
+    select.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const list = select.querySelector("[data-dropdown-list]");
+      const icon = select.querySelector("[data-dropdown-icon]");
+
+      list.classList.toggle("is--active");
+      icon.style.transform = list.classList.contains("is--active") ? "rotate(180deg)" : "rotate(0deg)";
+
+      if (e.target.classList.contains("submenu__item")) {
+        e.target.classList.add("is--active");
+        list.classList.remove("is--active");
+        icon.style.transform = "rotate(0deg)";
+      }
+    });
+  });
+}
+
+/**
+ * Select
+ */
 const selects = document.querySelectorAll("[data-select]");
 
 if (selects) {
   selects.forEach((select) => {
     select.addEventListener("click", (e) => {
       e.preventDefault();
-      const list = select.querySelector(".select__list");
+      const list = select.querySelector("[data-select-list]");
       const icon = select.querySelector("[data-select-icon]");
-      const current = select.querySelector(".select__current span");
+      const current = select.querySelector("[data-select-current] span");
 
-      select.querySelectorAll(".select__item").forEach((el) => {
+      select.querySelectorAll("[data-select-item]").forEach((el) => {
         if (current.textContent === el.textContent) {
-          el.classList.add("select__item--active");
+          el.classList.add("is--active");
         }
       });
 
-      list.classList.toggle("show");
+      list.classList.toggle("is--active");
       icon.style.transform = "rotate(180deg)";
 
-      if (list.classList.contains("show")) {
+      if (list.classList.contains("is--active")) {
         icon.style.transform = "rotate(180deg)";
       } else {
         icon.style.transform = "rotate(0deg)";
       }
 
-      if (e.target.classList.contains("select__item")) {
+      if (e.target.classList.contains("submenu__item")) {
         current.textContent = e.target.textContent;
-        select.querySelectorAll(".select__item").forEach((el) => el.classList.remove("select__item--active"));
-        e.target.classList.add("select__item--active");
-        list.classList.remove("show");
+        select.querySelectorAll("[data-select-item]").forEach((el) => el.classList.remove("is--active"));
+        e.target.classList.add("is--active");
+        list.classList.remove("is--active");
         icon.style.transform = "rotate(0deg)";
       }
     });
@@ -209,129 +233,66 @@ if (selects) {
 // modal("[data-show-modal-3]", "[data-modal-3]", ".backdrop", "is--active", "[data-modal-close]");
 // modal("[data-show-modal-4]", "[data-modal-4]", ".backdrop", "is--active", "[data-modal-close]");
 
-const accordion = (parentSelector) => {
-  const parent = document.querySelector(parentSelector);
+const accordion = (trigger, content) => {
+  const accordeonTrigger = document.querySelectorAll(trigger);
+  const accordeonContent = document.querySelectorAll(content);
 
-  if (parent) {
-    const header = parent.querySelectorAll("[data-accordion-product-header]");
-    const content = parent.querySelectorAll("[data-accordion-product-content]");
+  if (accordeonTrigger.length > 0 && accordeonContent.length > 0) {
 
-    header.forEach((item, index) => {
+    accordeonTrigger.forEach((item, index) => {
+      let icon = item.querySelector(".producttabs-sitebar__item-wrapper svg");
+
+      if (accordeonTrigger[index].classList.contains("is--active")) {
+        icon.style.transform = "rotate(0deg)";
+      }
+
       item.addEventListener("click", (e) => {
         if (content[index]) {
-          header[index].classList.toggle("is--active");
-          content[index].classList.toggle("is--active");
+          accordeonTrigger[index].classList.toggle("is--active");
+          accordeonContent[index].classList.toggle("is--active");
+        }
+
+        if (accordeonTrigger[index].classList.contains("is--active")) {
+          icon.style.transform = "rotate(0deg)";
+        } else {
+          icon.style.transform = "rotate(-90deg)";
         }
       });
     });
   }
 };
 
-accordion("[data-accordion-product]");
+/**
+ * Tabs
+ */
+function tabs(tabTrigger, tabContent) {
+  let tab = document.querySelectorAll(tabTrigger);
+  let content = document.querySelectorAll(tabContent);
 
-// /**
-//  * Stepper script
-//  */
-// // const stepper = () => {
+  if (tab.length > 0 && content.length > 0) {
+    let id;
 
-// // }
+    tab.forEach(el => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        id = +e.target.getAttribute("data-producttabs");
 
-// const steps = document.querySelectorAll("[data-step]");
+        tab.forEach(el => el.classList.remove("is--active"));
+        content.forEach(el => el.classList.remove("is--active"));
 
-// if (steps) {
-//   steps.forEach((step, index) => {
-//     step.addEventListener("click", (e) => {
-//       const dataStep = e.target.closest(".subcatalog-work__item");
+        tab[id].classList.add("is--active");
+        content[id].classList.add("is--active");
+      });
+    });
+  }
+}
 
-//       if (dataStep.dataset.step > index + 1) {
-//         steps.forEach((s) => s.classList.remove("active"));
-//         step.classList.toggle("active");
-//       } else if (dataStep.dataset.step == 1) {
-//         step.classList.toggle("active");
-//         steps.forEach((s, idx) => {
-//           if (idx >= dataStep.dataset.step) {
-//             steps[idx].classList.remove("active");
-//           }
-//         });
-//       } else if (dataStep.dataset.step <= index + 1) {
-//         steps.forEach((s, idx) => {
-//           if (idx <= index) {
-//             s.classList.add("active");
-//           } else {
-//             s.classList.remove("active");
-//           }
-//         });
-//       }
-//     });
-//   });
-// }
-
-// /**
-//  * Dropdown buttons
-//  */
-// const dropdownButtons = document.querySelectorAll("[data-dropdown]");
-// if (dropdownButtons) {
-//   dropdownButtons.forEach((btn) => {
-//     btn.addEventListener("click", (e) => {
-//       const list = btn.querySelector("[data-dropdown-list]");
-//       const current = btn.querySelector("[data-dropdown-current]");
-//       const chevron = btn.querySelector(".dropdown__icon-chevron");
-//       chevron.style.transform = `rotate(90deg)`;
-
-//       if (list) {
-//         list.classList.toggle("is--active");
-
-//         if (chevron) {
-//           chevron.style.transform = `rotate(270deg)`;
-//         }
-//       }
-
-//       if (e.target.classList.contains("dropdown__item")) {
-//         current.textContent = e.target.textContent;
-
-//         if (chevron) {
-//           chevron.style.transform = `rotate(90deg)`;
-//         }
-//       }
-//     });
-//   });
-// }
-
-// const main_slider = new Swiper(".main-slider", {
-//   loop: true,
-
-//   navigation: {
-//     nextEl: ".main-slider__btn--next",
-//     prevEl: ".main-slider__btn--prev",
-//   },
-
-//   pagination: {
-//     el: ".swiper-pagination",
-//     type: "bullets",
-//     clickable: true,
-//   },
-
-//   1200: {
-//     slidesPerView: 9,
-//     spaceBetween: 10,
-//   },
-
-//   // Буллеты
-//   clickable: true,
-//   dynamicBullets: true,
-// });
-
-// /**
-//  * Mobile menu
-//  */
-// const mobileTrigger = document.querySelector("[data-toggle-menu]");
-// const mobileMenu = document.querySelector("[data-mobile-menu]");
-// const closeMobileMenu = document.querySelector("[data-mobile-menu-close]");
-
-// mobileTrigger.addEventListener("click", () => {
-//   mobileMenu.classList.toggle("is--active");
-// });
-
-// closeMobileMenu.addEventListener("click", () => {
-//   mobileMenu.classList.remove("is--active");
-// });
+/**
+ * Product Custom Slider
+ */
+const productSlider = (productSlider) => {
+  let mainPicture = productSlider.querySelector("[data-product-slider-main]");
+  let thumbs = productSlider.querySelectorAll("[data-product-slider-thumb]");
+  let btns = productSlider.querySelectorAll("[data-product-slider-btn]");
+}
