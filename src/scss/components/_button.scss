@@ -1,6 +1,7 @@
 .btn {
   @include text-bold;
 
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19,9 +20,27 @@
   cursor: pointer;
   transition: var(--transition-1);
 
+  span {
+    margin-left: 4rem;
+  }
+
+  img,
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+  }
+
   &.btn-primary {
     color: var(--white);
     background: var(--orange);
+    border: transparent;
+  }
+
+  &.btn-secondary {
+    color: var(--white);
+    background: var(--secondary);
     border: transparent;
   }
 
@@ -54,7 +73,8 @@
 
   &.btn-fullwidth {
     justify-content: center;
-    width: 100%;
+    width: auto !important;
+    min-width: 38rem;
   }
 
   &.btn-rounded {
@@ -67,10 +87,19 @@
     border-radius: 50%;
   }
 
+  &.btn-radius-50 {
+    border-radius: 5rem !important;
+  }
+
   &.btn-outlined {
     color: var(--black);
-    background: transparent;
+    background: transparent !important;
     border: 1px solid var(--blue);
+
+    &.btn-success {
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
   }
 
   &.btn-wide {

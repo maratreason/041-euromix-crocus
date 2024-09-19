@@ -141,6 +141,10 @@
     font-size: 1.6rem;
     letter-spacing: -0.5px;
   }
+
+  .card__img {
+    width: 100%;
+  }
 }
 
 .job-card {
@@ -156,6 +160,7 @@
   &__content {
     display: flex;
     gap: 2rem;
+    align-items: center;
     color: var(--white);
   }
 
@@ -187,5 +192,15 @@
 
   &__title {
     font-size: 1.8rem;
+  }
+}
+
+.news-card {
+  @extend .job-card;
+
+  &__content {
+    @extend .job-card__content;
+
+    color: var(--black);
   }
 }

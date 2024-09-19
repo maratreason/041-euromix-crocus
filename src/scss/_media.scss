@@ -1,28 +1,330 @@
 @media screen and (max-width: 1400px) {
-
+  .footer {
+    background-image: none;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-  // .container {
-  //   width: 100%;
-  //   padding: 0 3rem;
-  // }
+  .container {
+    width: 100%;
+    padding: 0 3rem;
+  }
+
+  .header {
+    &-bottom {
+      &__text {
+        display: none;
+      }
+    }
+
+    &-top {
+      background: linear-gradient(70deg, #222a31 80%, #ff8000 80%);
+
+      &__link {
+        span {
+          display: none;
+        }
+      }
+
+      &__menu {
+        gap: 2rem;
+      }
+    }
+  }
+
+  .section-hero {
+    &__form {
+      right: 3rem;
+    }
+  }
+
+  .catalog-tabs {
+    &__content {
+      justify-content: center;
+    }
+
+    &__btn {
+      padding: 0.5rem 1rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  .big-card {
+    width: 40rem;
+    height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .section-advantages {
+    height: auto;
+
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__item {
+      width: 32rem;
+    }
+  }
+
+  .section-popular {
+    &__content {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .section-choose {
+    height: auto;
+
+    &__content {
+      width: 70%;
+    }
+
+    &__titleblock,
+    &__socialblock {
+      min-width: 100%;
+      height: auto;
+      text-align: center;
+    }
+
+    &__title {
+      margin-bottom: 2rem;
+    }
+
+    &__image {
+      right: -3rem;
+      bottom: -5rem;
+    }
+  }
+
+  .services-tabs {
+    &__header {
+      overflow: scroll;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__article {
+      width: 100%;
+    }
+  }
+
+  .section-job {
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .section-about {
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__block {
+      width: 100%;
+
+      &--youtube {
+        order: -1;
+      }
+    }
+  }
+
+  .section-news {
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center; 
+    }
+  }
+
+  .footer {
+    &-top {
+      &__inner {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__phone {
+        justify-content: center;
+      }
+    }
+
+    &-middle {
+      &__inner {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &__content {
+        width: 100%;
+      }
+    }
+  }
+
+  .map-modal {
+  }
 }
 
-@media screen and (max-width: 1100px) {
-  
+@media screen and (max-width: 1060px) {
+  .header {
+    &-top {
+      height: 100%;
+
+      &__menu {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .search-input__input {
+    min-width: auto;
+  }
 }
 
 @media screen and (max-width: 992px) {
-  
-}
+  .hamburger {
+    display: flex;
+  }
 
-@media screen and (max-width: 930px) {
-  
+  .header {
+    margin-bottom: 0;
+
+    &-top {
+      &__menu {
+        display: none;
+
+        &--orange {
+          display: flex;
+        }
+      }
+    }
+
+    &-bottom {
+      display: none;
+    }
+  }
+
+  .section-hero {
+    &__form {
+      display: none;
+    }
+  }
+
+  .big-card {
+    &__content {
+      padding: 1.2rem 3rem;
+    }
+
+    &__title {
+      line-height: 1.2;
+    }
+  }
+
+  .section-partners {
+    &__slide {
+      flex-wrap: wrap;
+
+      &-left {
+        gap: 1.5rem;
+      }
+
+      &-left,
+      &-right {
+        width: 100%;
+      }
+
+      &-icon {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      &-block {
+        justify-content: center;
+      }
+    }
+
+    &__pagination {
+      justify-content: center;
+      margin: 3.5rem auto 0;
+    }
+
+    &__dot {
+      right: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-  
+  .section-advantages {
+    background-position: 0 102%;
+    background-size: 100%;
+  }
+
+  .section-choose {
+    &__image {
+      height: 30rem;
+    }
+
+    &__socialblock {
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    &__phone {
+      order: 1;
+      font-size: 2rem;
+    }
+
+    &__titleblock {
+      padding: 1rem 0;
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+      font-size: 2.4rem;
+    }
+
+    &__subtitle {
+      font-size: 2rem;
+    }
+  }
+
+  .section-about {
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
+
+  .section-news {
+    &__item {
+      width: 100%;
+    }
+  }
+
+  .footer {
+    &-top {
+
+    }
+
+    &-middle {
+      &__content {
+        grid-template-columns: repeat(1, 100%);
+      }
+
+      &__block {
+        
+      }
+    }
+
+    &-form {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -30,8 +332,91 @@
     width: 100%;
     padding: 0 1rem;
   }
+
+  .section-hero {
+    &__content {
+      &-inner {
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+
+      &-year {
+        margin: 0 auto;
+      }
+    }
+
+    &__block {
+      top: 25%;
+    }
+  }
+
+  .catalog-tabs {
+    &__content-more {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .section-about__subtitle {
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  .section-job {
+    .job-card {
+      &__date-wrapper {
+        width: 14rem;
+        height: 4rem;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .footer {
+    &-bottom {
+      &__links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 3rem;
+      }
+
+      &__text {
+        text-align: center;
+      }
+    }
+  }
 }
 
-@media screen and (max-width: 430px) {
-  
+@media screen and (max-width: 450px) {
+  .big-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-choose {
+    &__content {
+      width: 100%;
+    }
+
+    &__socialblock,
+    &__titleblock {
+      width: 100%;
+    }
+
+    &__infoblock {
+      width: 60%;
+    }
+  }
+
+  .map {
+    &-modal {
+      display: none;
+    }
+  }
+
+  .job-card__date-wrapper {
+    width: 15rem;
+  }
 }
