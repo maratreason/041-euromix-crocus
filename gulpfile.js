@@ -14,6 +14,11 @@ const gulpPug = require("gulp-pug");
 const browserSync = require("browser-sync").create();
 const del = require("del");
 
+const svgSprite = require("gulp-svg-sprite");
+const svgmin = require("gulp-svgmin");
+const postcss = require("gulp-postcss");
+const assets = require("postcss-assets");
+
 const paths = {
   pug: {
     src: "src/*.pug",
@@ -60,6 +65,10 @@ function styles() {
       .pipe(autoprefixer('last 2 versions'))
       // .pipe(cleanCss({ level: 2, }))
       .pipe(rename({basename: "main", suffix: ".min"}))
+      .pipe(postcss([assets({
+        basePath: "build/css/",
+        loadPaths: ["images/"]
+      })]))
       .pipe(sourceMaps.write("."))
       .pipe(size({showFiles: true}))
       .pipe(gulp.dest(paths.styles.dest))
