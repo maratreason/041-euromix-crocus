@@ -2,6 +2,8 @@ header.header
   .header-top
     .container
       .header-top__inner
+        .hamburger
+          .hamburger1
         ul.header-top__menu
           li.header-top__item
             svg.header-top__item-icon(width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -43,16 +45,29 @@ header.header
           p.header-bottom__text Работаем с  1992 года!
           
         ul.header-bottom__menu-list
-          li.header-bottom__menu-item
-            a.header-bottom__menu-link(href="#")
+          li.header-bottom__menu-item(data-dropdown)
+            a.header-bottom__menu-link.menu(href="#" data-dropdown-current)
               span.header-bottom__menu-text О ЗАВОДЕ
-              svg.header-bottom__menu-icon(width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+              svg.header-bottom__menu-icon(data-dropdown-icon width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
                 path(id="Vector" d="M9.685 3.43591C9.972 3.14891 9.972 2.68291 9.685 2.39591C9.398 2.10891 8.932 2.10891 8.645 2.39591L5.449 5.59091C5.32 5.69091 5.162 5.74691 4.997 5.74691C4.832 5.74691 4.673 5.69091 4.545 5.59091L1.356 2.40191C1.069 2.11491 0.603 2.11491 0.316 2.40191C0.029 2.68891 0.029 3.15491 0.316 3.44191L4.477 7.60291C4.615 7.74091 4.802 7.81791 4.997 7.81791C5.192 7.81791 5.379 7.74091 5.517 7.60291L9.685 3.43591Z" fill="black")
-          li.header-bottom__menu-item
-            a.header-bottom__menu-link(href="#")
-              span.header-bottom__menu-text каталог
-              svg.header-bottom__menu-icon(width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+              ul.submenu(data-dropdown-list)
+                a.submenu__item(href="#" data-dropdown-item) О Заводе
+                a.submenu__item(href="#" data-dropdown-item) О Работе
+                a.submenu__item(href="#" data-dropdown-item) Пунтк 3
+                a.submenu__item(href="#" data-dropdown-item) Пунтк 4
+                a.submenu__item(href="#" data-dropdown-item) Пунтк 5
+                a.submenu__item(href="#" data-dropdown-item) Пунтк 6
+                a.submenu__item(href="#" data-dropdown-item) Пунтк 7
+
+          li.header-bottom__menu-item(data-dropdown)
+            a.header-bottom__menu-link.menu(href="#" data-dropdown-current)
+              span.header-bottom__menu-text Каталог
+              svg.header-bottom__menu-icon(data-dropdown-icon width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
                 path(id="Vector" d="M9.685 3.43591C9.972 3.14891 9.972 2.68291 9.685 2.39591C9.398 2.10891 8.932 2.10891 8.645 2.39591L5.449 5.59091C5.32 5.69091 5.162 5.74691 4.997 5.74691C4.832 5.74691 4.673 5.69091 4.545 5.59091L1.356 2.40191C1.069 2.11491 0.603 2.11491 0.316 2.40191C0.029 2.68891 0.029 3.15491 0.316 3.44191L4.477 7.60291C4.615 7.74091 4.802 7.81791 4.997 7.81791C5.192 7.81791 5.379 7.74091 5.517 7.60291L9.685 3.43591Z" fill="black")
+              ul.submenu(data-dropdown-list)
+                a.submenu__item(href="#" data-dropdown-item="Каталог товаров 1") Каталог товаров 1
+                a.submenu__item(href="#" data-dropdown-item="Каталог товаров 2") Каталог товаров 2
+                a.submenu__item(href="#" data-dropdown-item="Каталог товаров 3") Каталог товаров 3
           li.header-bottom__menu-item
             a.header-bottom__menu-link(href="#")
               span.header-bottom__menu-text ЦЕНЫ
